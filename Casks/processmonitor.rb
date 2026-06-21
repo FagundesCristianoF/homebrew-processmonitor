@@ -12,13 +12,13 @@ cask "processmonitor" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "ProcessMonitor.app"
 
   zap trash: [
-    "~/Library/Preferences/com.cristianofagundes.ProcessMonitor.plist",
     "~/Library/Application Support/ProcessMonitor",
+    "~/Library/Preferences/com.cristianofagundes.ProcessMonitor.plist",
     "~/Library/Saved Application State/com.cristianofagundes.ProcessMonitor.savedState",
   ]
 end
